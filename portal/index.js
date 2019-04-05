@@ -43,6 +43,7 @@ $(document).ready(function () {
     on: {
       slideChangeTransitionEnd: function() {
         if(swiperFront && (this.activeIndex == swiperFrontLength + 2)) {
+          console.log('swiperFront slideChangeTransitionEnd');
           this.slideToLoop(0, 0);
         }
       }
@@ -56,70 +57,67 @@ $(document).ready(function () {
     a11y: true
   });
   
-  var swiperBgBoxInner = [];
-  var swiperInner = [];
+  [];
   
   for(var i = 1; i <= 6; i++) {
-    swiperBgBoxInner.push(
-      new Swiper('.swiper-bg-box .swiper-inner-' + i, {
-        touchEventsTarget: 'wrapper',
-        effect: 'cube',
-        cubeEffect: {
-          shadow: false,
-          slideShadows: true,
-        },
-        loop: true,
-        loopAdditionalSlides: 1,
-        direction: 'vertical',
-        allowTouchMove: false
-      })
-    );
+    var swiperBgBoxInner = new Swiper('.swiper-bg-box .swiper-inner-' + i, {
+      touchEventsTarget: 'wrapper',
+      effect: 'cube',
+      cubeEffect: {
+        shadow: false,
+        slideShadows: true,
+      },
+      loop: true,
+      loopAdditionalSlides: 1,
+      direction: 'vertical',
+      allowTouchMove: false
+    });
     
-    swiperInner.push(
-      new Swiper('.swiper-front .swiper-inner-' + i, {
-        touchEventsTarget: 'wrapper',
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 0,
-        effect: 'coverflow',
-        direction: 'vertical',
-        speed: 300,
-        coverflowEffect: {slideShadows:false},
-        pagination: {
-          el: '.swiper-front .swiper-inner-' + i + '>.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-front .swiper-inner-' + i + '>.swiper-button-next',
-          prevEl: '.swiper-front .swiper-inner-' + i + '>.swiper-button-prev',
-        },
-        controller: {
-          control: swiperBgBoxInner[i - 1],
-          by: 'container',
-        },
-        on: {
-          slideChangeTransitionEnd: function() {
-            var target = this;
-            var index = $(this.$el[0]).parent().data("swiper-slide-index");
-            $('.swiper-front .swiper-slide-duplicate[data-swiper-slide-index=' + index + '] .swiper-container').each(function(index, element) {
-              if( this.swiper ) {
-                this.swiper.slideTo(target.activeIndex, 0);
-              }
-            });
-            $('.swiper-slide-shadow-top, .swiper-slide-shadow-bottom').css({opacity: '0'});
-          }
-        },
-        slidesPerView: 1.2,
-        keyboard: true,
-        threshold: 10,
-        loopAdditionalSlides: 1,
-        loop: true
-      })
-    );
+    new Swiper('.swiper-front .swiper-inner-' + i, {
+      touchEventsTarget: 'wrapper',
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 0,
+      effect: 'coverflow',
+      direction: 'vertical',
+      speed: 300,
+      coverflowEffect: {slideShadows:false},
+      pagination: {
+        el: '.swiper-front .swiper-inner-' + i + '>.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-front .swiper-inner-' + i + '>.swiper-button-next',
+        prevEl: '.swiper-front .swiper-inner-' + i + '>.swiper-button-prev',
+      },
+      controller: {
+        control: swiperBgBoxInner,
+        by: 'container',
+      },
+      on: {
+        slideChangeTransitionEnd: function() {
+          var target = this;
+          var index = $(this.$el[0]).parent().data("swiper-slide-index");
+          $('.swiper-front .swiper-slide-duplicate[data-swiper-slide-index=' + index + '] .swiper-container').each(function(index, element) {
+            if( this.swiper && this.swiper.activeIndex != target.activeIndex ) {
+              console.log('swiperInner slideChangeTransitionEnd');
+              this.swiper.slideTo(target.activeIndex, 0);
+            }
+          });
+          $('.swiper-slide-shadow-top, .swiper-slide-shadow-bottom').css({opacity: '0'});
+        }
+      },
+      slidesPerView: 1.2,
+      keyboard: true,
+      threshold: 10,
+      loopAdditionalSlides: 1,
+      loop: true
+    });
   }
   
   swiperFront.on('resize', function() {
     $('.swiper-container').each(function(index, element) {
+      console.log('.swiper-container');
       this.swiper.update();
     });
   });
