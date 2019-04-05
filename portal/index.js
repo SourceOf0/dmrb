@@ -11,7 +11,7 @@ $(document).ready(function () {
     effect: 'cube',
     cubeEffect: {
       shadow: true,
-      slideShadows: true,
+      slideShadows: false,
       shadowOffset: 40,
       shadowScale: 0.5,
     },
@@ -63,7 +63,7 @@ $(document).ready(function () {
       effect: 'cube',
       cubeEffect: {
         shadow: false,
-        slideShadows: true,
+        slideShadows: false,
       },
       direction: 'vertical',
       allowTouchMove: false
