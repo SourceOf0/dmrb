@@ -44,24 +44,6 @@ body {
   padding-right: 0.2em;
 }
 
-.header-swipers a::after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 2px;
-  background-color: #ffffff;
-  transition: .3s;
-  transform: translateX(-50%);
-}
-
-.header-swipers a:hover::after {
-  width: 100%;
-}
-
-
-
 .swiper-container {
   position: absolute;
   left: 0;
