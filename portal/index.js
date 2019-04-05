@@ -15,8 +15,6 @@ $(document).ready(function () {
       shadowOffset: 40,
       shadowScale: 0.5,
     },
-    loop: true,
-    loopAdditionalSlides: 1,
     nested: true,
     allowTouchMove: false
   });
@@ -40,12 +38,18 @@ $(document).ready(function () {
       control: [swiperBgBox],
       by: 'container',
     },
+    on: {
+      slideChangeTransitionEnd: function() {
+        if(swiperFront && (this.activeIndex == swiperFrontLength + 2)) {
+          console.log('swiperFront slideChangeTransitionEnd');
+          this.slideToLoop(0, 0);
+        }
+      }
+    },
     slidesPerView: 1.2,
     keyboard: true,
     nested: true,
     threshold: 10,
-    loop: true,
-    loopAdditionalSlides: 1,
     a11y: true
   });
   
@@ -57,8 +61,6 @@ $(document).ready(function () {
         shadow: false,
         slideShadows: true,
       },
-      loop: true,
-      loopAdditionalSlides: 1,
       direction: 'vertical',
       allowTouchMove: false
     });
@@ -84,11 +86,22 @@ $(document).ready(function () {
         control: swiperBgBoxInner,
         by: 'container',
       },
+      on: {
+        slideChangeTransitionEnd: function() {
+          var target = this;
+          var index = $(this.$el[0]).parent().data("swiper-slide-index");
+          $('.swiper-front .swiper-slide-duplicate .swiper-inner-' + (index+1)).each(function(index, element) {
+            if( this.swiper && this.swiper.activeIndex != target.activeIndex ) {
+              console.log('swiperInner slideChangeTransitionEnd');
+              this.swiper.slideTo(target.activeIndex, 0);
+            }
+          });
+          $('.swiper-slide-shadow-top, .swiper-slide-shadow-bottom').css({opacity: '0'});
+        }
+      },
       slidesPerView: 1.2,
       keyboard: true,
-      threshold: 10,
-      loopAdditionalSlides: 1,
-      loop: true
+      threshold: 10
     });
   }
   
