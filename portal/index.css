@@ -17,6 +17,10 @@ body {
   outline: none;
 }
 
+.header-swipers {
+  height: 100%;
+}
+
 .header-swipers a {
   color: #ffffff;
   position: relative;
