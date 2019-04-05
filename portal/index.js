@@ -115,13 +115,6 @@ $(document).ready(function () {
     });
   }
   
-  swiperFront.on('resize', function() {
-    $('.swiper-container').each(function(index, element) {
-      console.log('.swiper-container');
-      this.swiper.update();
-    });
-  });
-  
   $('body').css({opacity: '1'});
 });
 
