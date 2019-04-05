@@ -15,6 +15,8 @@ $(document).ready(function () {
       shadowOffset: 40,
       shadowScale: 0.5,
     },
+    loop: true,
+    loopAdditionalSlides: 1,
     nested: true,
     allowTouchMove: false
   });
@@ -50,6 +52,8 @@ $(document).ready(function () {
     keyboard: true,
     nested: true,
     threshold: 10,
+    loop: true,
+    loopAdditionalSlides: 1,
     a11y: true
   });
   
