@@ -11,7 +11,7 @@ $(document).ready(function () {
     effect: 'cube',
     cubeEffect: {
       shadow: true,
-      slideShadows: false,
+      slideShadows: true,
       shadowOffset: 40,
       shadowScale: 0.5,
     },
@@ -63,8 +63,10 @@ $(document).ready(function () {
       effect: 'cube',
       cubeEffect: {
         shadow: false,
-        slideShadows: false,
+        slideShadows: true,
       },
+      loop: true,
+      loopAdditionalSlides: 1,
       direction: 'vertical',
       allowTouchMove: false
     });
@@ -105,7 +107,9 @@ $(document).ready(function () {
       },
       slidesPerView: 1.2,
       keyboard: true,
-      threshold: 10
+      threshold: 10,
+      loopAdditionalSlides: 1,
+      loop: true
     });
   }
   
