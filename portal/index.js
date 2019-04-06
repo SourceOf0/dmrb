@@ -25,9 +25,7 @@ $(document).ready(function () {
     slidesPerView: 'auto',
     centeredSlides: true,
     spaceBetween: 0,
-    effect: 'coverflow',
     speed: 300,
-    coverflowEffect: {slideShadows:false},
     pagination: {
       el: '.swiper-front>.swiper-pagination',
       clickable: true,
@@ -76,10 +74,8 @@ $(document).ready(function () {
       slidesPerView: 'auto',
       centeredSlides: true,
       spaceBetween: 0,
-      effect: 'coverflow',
       direction: 'vertical',
       speed: 300,
-      coverflowEffect: {slideShadows:false},
       pagination: {
         el: '.swiper-front .swiper-inner-' + i + '>.swiper-pagination',
         clickable: true,
