@@ -56,7 +56,7 @@ $(document).ready(function () {
     loopAdditionalSlides: 1,
     a11y: true
   });
-  
+  /*
   for(var i = 1; i <= 6; i++) {
     var swiperBgBoxInner = new Swiper('.swiper-bg-box .swiper-inner-' + i, {
       touchEventsTarget: 'wrapper',
@@ -112,7 +112,7 @@ $(document).ready(function () {
       loop: true
     });
   }
-  
+  */
   $('body').css({opacity: '1'});
 });
 
