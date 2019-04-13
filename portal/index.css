@@ -1,3 +1,4 @@
+
 body {
   font-family: "M PLUS Rounded 1c", serif;
   color: #ffffff;
@@ -9,15 +10,60 @@ body {
   width: 100%;
   height: 100%;
   background-color: #444444;
-  opacity: 0;
-  transition: .3s;
+}
+
+main {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 *:focus {
   outline: none;
 }
 
-.header-swipers a {
+div {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: "M PLUS Rounded 1c", serif;
+  box-sizing: border-box;
+  font-size: 1em;
+  display: block;
+  line-height: 1.5;
+  border-radius: .3em;
+  padding: .2em .5em;
+  margin: .3em 0;
+}
+
+input, textarea {
+  font-family: "M PLUS Rounded 1c", serif;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1em;
+  display: block;
+  line-height: 1.5;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .3em;
+  padding: .3em .7em;
+  margin: .3em 0;
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2em rgba(0, 123, 255, .25);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #cccccc;
+}
+
+a {
   color: #ffffff;
   position: relative;
   display: inline-block;
@@ -27,8 +73,21 @@ body {
   padding: 0 0.2em;
 }
 
-.header-swipers a:before {
-  content: "\f35d";
+.comp {
+  pointer-events: none;
+  opacity: 0;
+  transition: .3s;
+}
+
+.comp-show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* ---------- */
+
+.comp-main a:before {
+  content: "\f0c1";
   font-family: "Font Awesome 5 Free";
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -38,6 +97,10 @@ body {
   line-height: 1;
   font-weight: bold;
   padding-right: 0.2em;
+}
+
+.comp-main a[target='_blank']:before {
+  content: "\f35d";
 }
 
 .swiper-container {
@@ -51,6 +114,12 @@ body {
 .swiper-container p {
   padding: 0 10%;
   font-size: 17px;
+}
+
+@media (orientation: landscape) {
+  .swiper-container p {
+    padding: 0 0 0 5%;
+  }
 }
 
 .swiper-container h1 {
@@ -75,7 +144,6 @@ body {
 }
 
 .swiper-slide {
-  box-sizing: border-box;
   height: 80%;
   width: 80%;
   margin-top: auto;
@@ -83,6 +151,12 @@ body {
   padding: 10%;
   border: 1px solid rgba(255, 255 , 255, .5);
   background: rgba(255, 255, 255, .1);
+}
+
+@media (orientation: landscape) {
+  .swiper-slide {
+    padding: 5% 10% 5% 5%;
+  }
 }
 
 .swiper-bg-box {
@@ -93,6 +167,7 @@ body {
   height: 100px;
   margin-left: -50px;
   margin-top: -50px;
+  z-index: -10;
 }
 
 .swiper-bg-box .swiper-slide {
@@ -171,6 +246,11 @@ body {
   right: 10%;
 }
 
+@media (orientation: landscape) {
+  .swiper-container-vertical > .swiper-pagination-bullets {
+    right: 5%;
+  }
+}
 
 .swiper-bg-box .section-act .swiper-slide {
   background: rgba(0, 0, 0, .1);
@@ -191,3 +271,124 @@ body {
   background: rgba(255, 255, 0, .1);
 }
 
+/* ---------- */
+
+
+.comp-bbs {
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+}
+
+.comp-bbs h3 {
+  font-size: 40px;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.bbs-back {
+  margin: 15px 15px 0;
+}
+
+@media (max-width: 620px) {
+  .comp-bbs h3 {
+    margin: 0;
+  }
+  .bbs-back {
+    margin: 15px 15px 0;
+  }
+}
+
+.bbs-loading .bbs-content {
+  display: none;
+}
+
+.bbs {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 5% 10px;
+}
+
+@media (max-width: 620px) {
+  .bbs {
+    width: 100%;
+  }
+}
+
+.bbs-info {
+  margin: 0;
+}
+
+.bbs-error {
+  color: #ff5555;
+  margin: 0;
+  text-align: left;
+}
+
+.comment-template {
+  display: none;
+}
+
+.comment {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: .3em;
+  padding: 0 1em .5em;
+  margin: 0 auto .8em;
+  width: 100%;
+  min-width: 260px;
+  text-align: right;
+}
+
+.comment-form {
+  margin: 0 0 1em;
+}
+
+.comment-text {
+  font-family: "M PLUS Rounded 1c", serif;
+  margin: 0;
+  padding: .8em 2em .5em 0;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.comment span,
+.comment-icon {
+  display: inline-block;
+  opacity: .5;
+  z-index: 1;
+}
+
+.comment span:empty {
+  display: none;
+}
+
+.comment-icon {
+  position: absolute;
+}
+.comment-icon:hover {
+  opacity: 1;
+}
+
+.comment-delete {
+  top: .8em;
+  right: 1em;
+}
+
+.comment-reply {
+  left: 1em;
+}
+
+@media (max-width: 620px) {
+  .comment span,
+  .comment-icon {
+    display: block;
+  }
+}
+
+.comment-collapse {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
