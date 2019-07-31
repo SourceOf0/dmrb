@@ -224,7 +224,16 @@
               <div class="swiper-slide">
                 <h2><a href="#bbs">BBS</a></h2>
                 <p>
-                  自作してみた。
+                  掲示板をFirebaseで自作してみた。<br>
+                  管理人はもちろんオレ。
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <h2><a href="#discord">Discord</a></h2>
+                <p>
+                  Discordは…ざっくり言うとチャットアプリ。<br>
+                  Skypeにめっちゃ毛が生えたような感じ（多機能の意）<br>
+                  実験用にサーバーを作って、ウィジェット設置してみた。
                 </p>
               </div>
               <div class="swiper-slide">
@@ -287,9 +296,9 @@
       </div>
     </div><!-- .comment-template -->
     
-    <a href="#" class="bbs-back"><i class="fas fa-arrow-left"></i> 戻る</a>
+    <a href="#" class="back"><i class="fas fa-arrow-left"></i> 戻る</a>
     <h3>BBS</h3>
-    <div class="bbs bbs-loading">
+    <div class="comp-inner bbs bbs-loading">
       <p class="bbs-info">読み込み中...</p>
       <form class="bbs-content comment-form">
         <p class="bbs-error"></p>
@@ -303,6 +312,73 @@
     </div><!-- .bbs -->
   </section><!-- .comp-bbs -->
 
+  <section class="comp comp-discord">
+    <a href="#" class="back"><i class="fas fa-arrow-left"></i> 戻る</a>
+    <h3>Discord</h3>
+    <div class="comp-inner">
+      <p>
+        多機能すぎるので使い方勉強中。<br>
+        突然押しかけて速攻抜けるもよし、<br>
+        全然関係ない質問するもよし、雑談するもよし、<br>
+        お好きにドゾ。
+      </p>
+      <iframe class="discord-frame" src="https://discordapp.com/widget?id=605599480925913116&theme=dark" allowtransparency="true" frameborder="0"></iframe>
+      <h4>
+        このサーバーについて
+      </h4>
+      <p>
+        招待URLは<br>
+        <a href="https://discordapp.com/" target="_blank">https://discord.gg/QMQWhjF</a><br>
+        <br>
+        参加時の初期設定は…<br>
+        「お試し広場」等、公開テキストチャンネルの閲覧＆書き込み可。<br>
+        「お試し通話」等、公開ボイスチャンネルは視聴のみ。通話参加不可。<br>
+        ※「知らないうちに通話に入ってた…」という事故防止のため（経験談）<br>
+        <br>
+        適宜、新しい役職・新しい部屋を作ってみる予定。<br>
+        ニコ生の延長線の雑談部屋を作るもよし、<br>
+        技術系の質問部屋を作るもよし、<br>
+        変な思い付きで何かやるときの集会場にしてもよし、<br>
+        で考え中。<br>
+        <br>
+        役職付与の際には、本人確認する場合あり。<br>
+        …といっても、身内なら一旦LINE経由で確認するし、<br>
+        ニコニコミュニティのメンバーならコミュ専用掲示板で確認するし、<br>
+        PixivFANBOXなら、有料記事のコメントで確認しようかなと思ってる、<br>
+        ってぐらい。<br>
+        <br>
+        全く知らない人が参加してくることは想定してるし、<br>
+        それ自体は全然ＯＫなんだけども、<br>
+        さすがに「荒らし行為」はBANしますんで、そこはヨロシク。
+      </p>
+      <h4>
+        Discordの軽い説明
+      </h4>
+      <p>
+        アプリはパソコン版もスマホ版もある。<br>
+        webブラウザ（Chromeなど）でアクセスするだけでも使える。<br>
+        <br>
+        アカウントを作らなくても、<a href="https://discordapp.com/" target="_blank">Discordのサイト</a>でユーザー名だけ入れれば使える。<br>
+        招待URLを入力してサーバーに参加するもよし、新しくサーバーを作ってもいい。<br>
+        ※一度画面を閉じるとアカウントが消えるので注意<br>
+        <br>
+        サーバーの中には複数のチャット部屋を作ることができ、<br>
+        テキストチャンネル（文字だけの部屋）と<br>
+        ボイスチャンネル（通話だけの部屋）の<br>
+        ２種類がある。<br>
+        ちなみに、このウィジェットにはボイスチャンネルだけが表示される模様。<br>
+        <br>
+        サーバーの管理者（BUN）は「役職（ロール）」を作れる。<br>
+        作った役職でできることは、こっちで設定することができる。<br>
+        これがすげぇ便利。<br>
+        その役職専用の部屋も作れる。<br>
+        テキストチャンネルで「見るだけ」の役職（書き込みできない）<br>
+        ボイスチャンネルで「聞くだけ」の役職（通話に参加できない）<br>
+        も作れる。
+      </p>
+    </div>
+  </section><!-- .comp-discord -->
+  
 </main>
 
 <footer class="swiper-container swiper-bg-box">
@@ -362,6 +438,7 @@
       <p>交流</p>
       <div class="swiper-container swiper-inner swiper-inner-6">
         <div class="swiper-wrapper">
+          <div class="swiper-slide"></div>
           <div class="swiper-slide"></div>
           <div class="swiper-slide"></div>
           <div class="swiper-slide"></div>

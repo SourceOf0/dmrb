@@ -64,7 +64,7 @@ input::placeholder, textarea::placeholder {
 }
 
 a {
-  color: #ffffff;
+  color: #aaaaff;
   position: relative;
   display: inline-block;
   transition: .3s;
@@ -76,17 +76,19 @@ a {
 .comp {
   pointer-events: none;
   opacity: 0;
-  transition: .3s;
+  height: 0;
 }
 
 .comp-show {
   pointer-events: auto;
   opacity: 1;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+  transition: opacity .3s;
 }
 
-/* ---------- */
-
-.comp-main a:before {
+.comp a:before {
   content: "\f0c1";
   font-family: "Font Awesome 5 Free";
   -webkit-font-smoothing: antialiased;
@@ -99,9 +101,52 @@ a {
   padding-right: 0.2em;
 }
 
-.comp-main a[target='_blank']:before {
+.comp a[target='_blank']:before {
   content: "\f35d";
 }
+
+.comp .back {
+  margin: 15px 15px 0;
+}
+
+.comp .back:before {
+  content: "";
+}
+
+.comp h3 {
+  font-size: 40px;
+  text-align: center;
+  margin: .5em 0;
+}
+@media (max-width: 620px) {
+  .comp h3 {
+    margin: .25em 0 .5em;
+  }
+}
+
+.comp h4 {
+  font-size: 20px;
+  text-align: center;
+  margin: 2em 0 .5em;
+}
+
+.comp p {
+  display: inner;
+  padding: 0 1em 2em;
+}
+
+.comp-inner {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 5% 50px;
+}
+@media (max-width: 620px) {
+  .comp-inner {
+    width: 100%;
+  }
+}
+
+/* ---------- */
 
 .swiper-container {
   position: absolute;
@@ -274,62 +319,27 @@ a {
 /* ---------- */
 
 
-.comp-bbs {
-  height: 100%;
-  overflow: auto;
-  padding: 10px;
-}
-
-.comp-bbs h3 {
-  font-size: 40px;
-  text-align: center;
-  margin: 1em 0;
-}
-
-.bbs-back {
-  margin: 15px 15px 0;
-}
-
-@media (max-width: 620px) {
-  .comp-bbs h3 {
-    margin: 0;
-  }
-  .bbs-back {
-    margin: 15px 15px 0;
-  }
-}
-
-.bbs-loading .bbs-content {
+.comp-bbs .bbs-loading .bbs-content {
   display: none;
 }
 
-.bbs {
-  width: 70%;
-  margin: 0 auto;
-  padding: 0 5% 10px;
-}
-
-@media (max-width: 620px) {
-  .bbs {
-    width: 100%;
-  }
-}
-
-.bbs-info {
+.comp-bbs .bbs-info {
   margin: 0;
+  padding: 0 50px;
 }
 
-.bbs-error {
+.comp-bbs .bbs-error {
   color: #ff5555;
   margin: 0;
+  padding: 0 50px;
   text-align: left;
 }
 
-.comment-template {
+.comp-bbs .comment-template {
   display: none;
 }
 
-.comment {
+.comp-bbs .comment {
   position: relative;
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -341,11 +351,11 @@ a {
   text-align: right;
 }
 
-.comment-form {
+.comp-bbs .comment-form {
   margin: 0 0 1em;
 }
 
-.comment-text {
+.comp-bbs .comment-text {
   font-family: "M PLUS Rounded 1c", serif;
   margin: 0;
   padding: .8em 2em .5em 0;
@@ -353,42 +363,62 @@ a {
   white-space: pre-wrap;
 }
 
-.comment span,
-.comment-icon {
+.comp-bbs .comment span,
+.comp-bbs .comment-icon {
   display: inline-block;
   opacity: .5;
   z-index: 1;
 }
 
-.comment span:empty {
+.comp-bbs .comment span:empty {
   display: none;
 }
 
-.comment-icon {
+.comp-bbs .comment-icon {
   position: absolute;
 }
-.comment-icon:hover {
+.comp-bbs .comment-icon:hover {
   opacity: 1;
 }
 
-.comment-delete {
+.comp-bbs .comment-delete {
   top: .8em;
   right: 1em;
 }
 
-.comment-reply {
+.comp-bbs .comment-reply {
   left: 1em;
 }
 
+.comp-bbs .comment-reply:before {
+  content: "";
+}
+
 @media (max-width: 620px) {
-  .comment span,
-  .comment-icon {
+  .comp-bbs .comment span,
+  .comp-bbs .comment-icon {
     display: block;
   }
 }
 
-.comment-collapse {
+.comp-bbs .comment-collapse {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+/* ---------- */
+
+.comp-discord .comp-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comp-discord .discord-frame {
+  width: 100%;
+  max-width: 500px;
+  min-height: 300px;
+}
+
