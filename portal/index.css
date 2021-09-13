@@ -300,6 +300,9 @@ a {
 .swiper-bg-box .section-act .swiper-slide {
   background: rgba(0, 0, 0, .1);
 }
+.swiper-bg-box .section-brd .swiper-slide {
+  background: rgba(0, 255, 255, .1);
+}
 .swiper-bg-box .section-mov .swiper-slide {
   background: rgba(100, 0, 255, .1);
 }

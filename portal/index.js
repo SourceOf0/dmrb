@@ -309,7 +309,7 @@ function initSwiper() {
     a11y: true
   });
   
-  for(var i = 1; i <= 6; i++) {
+  for(var i = 1; i <= 7; i++) {
     var swiperBgBoxInner = new Swiper(".swiper-bg-box .swiper-inner-" + i, {
       touchEventsTarget: "wrapper",
       effect: "cube",
