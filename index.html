@@ -4,7 +4,7 @@
 <head>
 
 
-<!-- 2023/02/19 残念。オレはまだ生きてるよ。 -->
+<!-- 2023/06/18 残念。オレはまだ生きてるよ。 -->
 
 
 <meta charset="utf-8"/>
@@ -312,22 +312,7 @@
                 </p>
               </div>
               <div class="swiper-slide">
-                <h2><a href="#bbs">BBS</a></h2>
-                <p>
-                  掲示板をFirebaseで自作してみた。<br>
-                  管理人はもちろんオレ。
-                </p>
-              </div>
-              <div class="swiper-slide">
-                <h2><a href="https://twitter.com/BUN_information" target="_blank">Twitter</a></h2>
-                <p>
-                  配信、動画、文章、絵、プログラム等々、<br>
-                  作ったものやリンクをつぶやいて、<br>
-                  自分の活動履歴を残す意味合いが強いアカウント。
-                </p>
-              </div>
-              <div class="swiper-slide">
-                <h2><a href="https://twitter.com/flying_echidna" target="_blank">Twitter（本垢）</a></h2>
+                <h2><a href="https://twitter.com/flying_echidna" target="_blank">Twitter</a></h2>
                 <p>
                   最近の暴走場所。<br>
                   過去の投稿は一応<a href="https://twilog.org/flying_echidna" target="_blank">Twilog</a>で辿れる。
@@ -347,50 +332,10 @@
     </div><!-- .swiper-container -->
   </section><!-- .comp-main -->
 
-  <section class="comp comp-bbs">
-    <div class="comment-template">
-      <div class="comment">
-        <a href="#" class="comment-icon comment-delete"><i class="fas fa-trash-alt"></i></a>
-        <p class="comment-text comment-collapse"></p>
-        <span class="comment-nickname"></span>
-        <a href="#" class="comment-icon comment-reply"><i class="fas fa-reply"></i> 返信</a>
-        <span class="comment-time"></span>
-      </div>
-      <div class="reply">
-        <form class="bbs-content comment-form comment-form-reply">
-          <p class="bbs-error"></p>
-          <input type="text" class="comment-form-nickname" placeholder="名前">
-          <textarea class="comment-form-text" placeholder="コメント" rows="3"></textarea>
-          <button type="submit" class="comment-form-submit" aria-label="投稿">投稿</button>
-        </form>
-      </div>
-    </div><!-- .comment-template -->
-    
-    <a href="#" class="back"><i class="fas fa-arrow-left"></i> 戻る</a>
-    <h3>BBS</h3>
-    <div class="comp-inner bbs bbs-loading">
-      <p class="bbs-info">読み込み中...</p>
-      <form class="bbs-content comment-form">
-        <p class="bbs-error"></p>
-        <input type="text" class="comment-form-nickname" placeholder="名前">
-        <textarea class="comment-form-text" placeholder="コメント" rows="3"></textarea>
-        <button type="submit" class="comment-form-submit" aria-label="投稿">投稿</button>
-      </form><!-- .comment-form -->
-      
-      <div class="bbs-content comment-timeline">
-      </div><!-- .comment-timeline -->
-    </div><!-- .bbs -->
-  </section><!-- .comp-bbs -->
-
   <section class="comp comp-discord">
     <a href="#" class="back"><i class="fas fa-arrow-left"></i> 戻る</a>
     <h3>Discord</h3>
     <div class="comp-inner">
-      <p>
-        「参加したいけど、いきなり参加はハードル高いぜよ…」という人は<br>
-        ツイッター（<a href="https://twitter.com/BUN_information" target="_blank">@BUN_information</a>）で話かけて、<br>
-        様子を見てもよいかもしれない。
-      </p>
       <iframe class="discord-frame" src="https://discordapp.com/widget?id=605599480925913116&theme=dark" allowtransparency="true" frameborder="0"></iframe>
       <h4>
         Discordの軽い説明
@@ -552,31 +497,14 @@
           <div class="swiper-slide"></div>
           <div class="swiper-slide"></div>
           <div class="swiper-slide"></div>
-          <div class="swiper-slide"></div>
-          <div class="swiper-slide"></div>
         </div>
       </div>
     </div>
   </div><!-- .swiper-wrapper -->
 </footer><!-- .swiper-container -->
 
-<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>
-<script>
-  var config = {
-    apiKey: "AIzaSyAjMq5DiDVoWgeQJ2kU_8fRoHZwhtfAmDQ",
-    authDomain: "portal-bbs-aa17e.firebaseapp.com",
-    databaseURL: "https://portal-bbs-aa17e.firebaseio.com",
-    projectId: "portal-bbs-aa17e",
-    storageBucket: "",
-    messagingSenderId: "896959350621"
-  };
-  firebase.initializeApp(config);
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script src="portal/index.js"></script>
 
 </body>
